@@ -10,7 +10,7 @@ function App() {
       {({ signOut, user }) => (
         <div className="app-container">
           <nav className="navbar">
-            <h1>MyDropbox</h1>
+            <h1>My-Backend-Dropbox</h1>
             <div className="nav-right">
               <span>{user.username}</span>
               <button onClick={signOut}>Sign out</button>
