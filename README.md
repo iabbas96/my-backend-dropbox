@@ -4,7 +4,7 @@ A serverless file hosting app inspired by Dropbox, built with React and AWS.
 
 ## Live URL
 
-https://main.xxxxxx.amplifyapp.com (update after deployment) // to be updated...
+the live url: https://inquisitive-semifreddo-b5bef8.netlify.app/
 
 ## Features
 
