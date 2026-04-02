@@ -1,0 +1,101 @@
+.version-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.version-modal {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  width: 480px;
+  max-width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.version-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.version-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  color: #111827;
+}
+
+.version-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 4px 8px;
+}
+
+.version-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.version-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.version-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.version-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.version-size {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.version-date {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.btn-download-version {
+  padding: 6px 12px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.version-loading,
+.version-empty {
+  color: #6b7280;
+  font-size: 14px;
+  text-align: center;
+  padding: 20px;
+}
