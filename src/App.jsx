@@ -11,6 +11,7 @@ function App() {
   const [activePage, setActivePage] = useState('files')
   const [currentFolder, setCurrentFolder] = useState('')
   const [refreshTrigger, setRefreshTrigger] = useState(0)
+  const [selectedFileKey, setSelectedFileKey] = useState(null);
 
   const handleUploadComplete = () => {
     setRefreshTrigger(prev => prev + 1)
@@ -21,7 +22,7 @@ function App() {
       {({ signOut, user }) => (
         <div className="app-container">
           <nav className="navbar">
-            <h1 className="nav-logo">MyDropbox</h1>
+            <h1 className="nav-logo">My-Backend-Dropbox</h1>
             <div className="nav-links">
               <button
                 className={`nav-btn ${activePage === 'files' ? 'active' : ''}`}
@@ -59,7 +60,15 @@ function App() {
                   currentFolder={currentFolder}
                   refreshTrigger={refreshTrigger}
                   onFolderOpen={setCurrentFolder}
+                  onShowVersions={setSelectedFileKey}
                 />
+
+                {selectedFileKey && (
+                <FileVersions
+                  fileKey={selectedFileKey}
+                  onClose={() => setSelectedFileKey(null)}
+                />)}
+                
               </>
             )}
             {activePage === 'profile' && <ProfilePage />}

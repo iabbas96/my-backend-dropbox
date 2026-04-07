@@ -110,16 +110,18 @@ const fetchFiles = async () => {
           </div>
           <div className="file-actions">
             <button className="btn-download" onClick={() => handleDownload(file.path)}>
-              Download
+              View-Download
             </button>
             <button className="btn-delete" onClick={() => handleDelete(file.path)}>
               Delete
             </button>
+
           </div>
         </div>
       ))}
 
       <button className="btn-refresh" onClick={fetchFiles}>Refresh</button>
+
     </div>
   )
 }
