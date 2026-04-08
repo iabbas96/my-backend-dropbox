@@ -1,4 +1,4 @@
-# Live URL
+# Live URL: https://main.d3ez0fjqtjc8s8.amplifyapp.com/
 
 # Task
 
@@ -90,7 +90,7 @@ npm create amplify@latest
 aws configure
 ```
 
-Enter your AWS Access Key ID, Secret Access Key, and set region to `us-east-1`.
+Enter your AWS Access Key ID, Secret Access Key, and set region to `us-north-1`.
 
 5. Start the Amplify sandbox (deploys backend to AWS):
 
@@ -114,6 +114,8 @@ npm run dev
 The app will be available at `http://localhost:5173`
 
 # Usage
+
+LIVE URL: https://main.d3ez0fjqtjc8s8.amplifyapp.com/
 
 -> Sign Up:
 
