@@ -1,7 +1,5 @@
 # Live URL
 
-https://inquisitive-semifreddo-b5bef8.netlify.app/
-
 # Task
 
 Dropbox is a file hosting service operated by the American company Dropbox, Inc., headquartered in San Francisco, California, that offers cloud storage, file synchronization, personal cloud, and client software. My Backend Dropbox is A serverless file hosting application inspired by Dropbox, built with React and AWS. This project implements cloud storage, file synchronization, and user authentication using serverless architecture.
@@ -167,5 +165,3 @@ OGTL ACADEMY
 Made at Qwasar SV -- Software Engineering School <img alt='Qwasar SV -- Software Engineering School's Logo' src='https://storage.googleapis.com/qwasar-public/qwasar-logo_50x50.png' width='20px' />
 
 ## Live URL
-
-https://inquisitive-semifreddo-b5bef8.netlify.app/
