@@ -1,4 +1,4 @@
-# Live URL: https://main.d3ez0fjqtjc8s8.amplifyapp.com/
+# Live URL: https://main.d3ez0fjqtjc8s8.amplifyapp.com
 
 # Task
 
@@ -23,12 +23,12 @@ The application demonstrates the power of serverless computing — there are no 
 -> Tech Stack
 
 | Layer          | Technology                       |
-| -------------- | -------------------------------- |
-| Frontend       | React 19, Vite                   |
+| -------------- | -------------------------------- | --- |
+| Frontend       | React 18, Vite                   |
 | Authentication | AWS Cognito via AWS Amplify      |
 | File Storage   | AWS S3 (with versioning enabled) |
 | Backend        | AWS Amplify Gen 2 (serverless)   |
-| Hosting        | Netlify                          |
+| Hosting        | AWS Amplify (Amplify Console)    |     |
 | Language       | JavaScript                       |
 
 -> Project Structure
@@ -58,7 +58,7 @@ my-backend-dropbox/
 
 -> Requirements
 
-- Node.js v20 or higher
+- Node.js v18 or higher
 - npm v8 or higher
 - AWS Account (free tier)
 - Git
@@ -69,6 +69,12 @@ my-backend-dropbox/
 
 ```bash
 git clone https://github.com/iabbas96/my-backend-dropbox.git
+cd my-backend-dropbox
+
+or
+
+
+git clone https://git.us.qwasar.io/my_backend_dropbox_209562_azdemo/my_backend_dropbox
 cd my-backend-dropbox
 ```
 
@@ -90,7 +96,7 @@ npm create amplify@latest
 aws configure
 ```
 
-Enter your AWS Access Key ID, Secret Access Key, and set region to `us-north-1`.
+Enter your AWS Access Key ID, Secret Access Key, and set region to `eu-north-1`.
 
 5. Start the Amplify sandbox (deploys backend to AWS):
 
@@ -111,11 +117,11 @@ File written: amplify_outputs.json
 npm run dev
 ```
 
-The app will be available at `http://localhost:5173`
+The app will be available locally at `http://localhost:5173`
 
 # Usage
 
-LIVE URL: https://main.d3ez0fjqtjc8s8.amplifyapp.com/
+LIVE URL: https://main.d3ez0fjqtjc8s8.amplifyapp.com
 
 -> Sign Up:
 
@@ -132,7 +138,7 @@ LIVE URL: https://main.d3ez0fjqtjc8s8.amplifyapp.com/
 4. Watch the progress bar as it uploads to AWS S3
 5. Click "Refresh" to see the file appear in the list
 
--> sDownload a File:
+-> Download a File:
 
 1. Find the file in the file list
 2. Click the "Download" button
