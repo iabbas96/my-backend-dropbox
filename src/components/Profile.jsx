@@ -51,11 +51,7 @@ export default function Profile() {
         }
       });
       setMessage('Profile updated successfully!');
-      timeoutRef.current = setTimeout(() => setMessage(''), 3000);
-      // for clearing the fields after successfully updating the user profile.
-    //   setGivenName('');
-    //   setFamilyName('');
-    //   setPhone('');
+      timeoutRef.current = setTimeout(() => setMessage(''), 3000); 
     } catch (err) {
       console.error(err);
       setError(err.message || 'Error updating profile');
