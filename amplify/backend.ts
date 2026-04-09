@@ -22,8 +22,11 @@ const backend = defineBackend({
 // Get the S3 bucket from storage resource
 const { bucket } = backend.storage.resources;
 
+// Attach Lambda and API to the 'data' stack (or 'storage' stack) to avoid circular dependency
+const targetStack = backend.data.stack;  // using 'data' stack instead of creating new ones
+
 // Lambda to list versions
-const listVersionsFn = new NodejsFunction(backend.createStack('ApiStack'), 'ListVersionsFn', {
+const listVersionsFn = new NodejsFunction(targetStack, 'ListVersionsFn', {
   entry: join(__dirname, 'functions', 'listVersions.ts'),
   handler: 'handler',
   runtime: Runtime.NODEJS_20_X,
@@ -40,7 +43,7 @@ listVersionsFn.addToRolePolicy(
   })
 );
 
-// Grant the authenticated role access to the bucket (using correct property name)
+// Grant the authenticated role access to the bucket
 backend.auth.resources.authenticatedUserIamRole.addToPrincipalPolicy(
   new PolicyStatement({
     actions: ['s3:PutObject', 's3:GetObject', 's3:ListBucket', 's3:DeleteObject'],
@@ -48,8 +51,8 @@ backend.auth.resources.authenticatedUserIamRole.addToPrincipalPolicy(
   })
 );
 
-// REST API Gateway
-const api = new RestApi(backend.createStack('ApiStack2'), 'VersionsApi', {
+// REST API Gateway – also attached to the same stack
+const api = new RestApi(targetStack, 'VersionsApi', {
   restApiName: 'FileVersionsService',
   defaultCorsPreflightOptions: {
     allowOrigins: ['https://main.d14jnftetiz25k.amplifyapp.com'],
