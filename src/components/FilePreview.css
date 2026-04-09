@@ -1,0 +1,92 @@
+/* Modal overlay */
+.preview-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+/* Modal content box */
+.preview-content {
+  background: white;
+  border-radius: 12px;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  padding: 1.5rem;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header with close button */
+.preview-content button:first-child {
+  align-self: flex-end;
+  background: #f0f0f0;
+  border: none;
+  font-size: 1rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background 0.2s;
+}
+.preview-content button:first-child:hover {
+  background: #e0e0e0;
+}
+
+/* File name heading */
+.preview-content h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  word-break: break-word;
+  font-size: 1.2rem;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+/* Image preview */
+.preview-content img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+/* Download link */
+.preview-content a {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #0066cc;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-align: center;
+  transition: background 0.2s;
+}
+.preview-content a:hover {
+  background: #0052a3;
+}
+
+/* Loading indicator */
+.preview-content p {
+  color: #666;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* For non‑image files */
+.preview-content div > p:first-of-type {
+  margin: 1rem 0;
+}

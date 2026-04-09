@@ -1,0 +1,120 @@
+/* Modal overlay */
+.share-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+/* Modal content box */
+.share-content {
+  background: white;
+  border-radius: 12px;
+  width: 500px;
+  max-width: 90vw;
+  padding: 1.5rem;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header close button */
+.share-content > button:first-child {
+  align-self: flex-end;
+  background: #f0f0f0;
+  border: none;
+  font-size: 1rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background 0.2s;
+}
+.share-content > button:first-child:hover {
+  background: #e0e0e0;
+}
+
+/* File name heading */
+.share-content h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  word-break: break-word;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Label */
+.share-content label {
+  font-weight: 600;
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
+  color: #555;
+}
+
+/* Select dropdown */
+.share-content select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+}
+
+/* Generate button */
+.share-content button:not(:first-child):not(.copy-btn) {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s;
+}
+.share-content button:not(:first-child):not(.copy-btn):hover {
+  background: #0052a3;
+}
+
+/* Container for generated link */
+.share-content div:last-of-type {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* Read‑only input field */
+.share-content input {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  font-size: 0.85rem;
+  word-break: break-all;
+}
+
+/* Copy button */
+.copy-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+.copy-btn:hover {
+  background: #218838;
+}

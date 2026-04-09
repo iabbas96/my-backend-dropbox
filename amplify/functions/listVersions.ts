@@ -2,12 +2,23 @@ import { S3Client, ListObjectVersionsCommand } from '@aws-sdk/client-s3';
 
 const s3 = new S3Client({});
 const BUCKET_NAME = process.env.BUCKET_NAME!;
+const ALLOWED_ORIGIN = process.env.ALLOWED_ORIGIN || 'https://main.d3ez0fjqtjc8s8.amplifyapp.com';
+
+const corsHeaders = {
+  'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
+  'Access-Control-Allow-Methods': 'GET,OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
+};
 
 export const handler = async (event: any) => {
   const key = event.queryStringParameters?.key;
   if (!key) {
     return {
       statusCode: 400,
+      headers: {
+        'Content-Type': 'application/json',
+        ...corsHeaders,
+      },
       body: JSON.stringify({ error: 'Missing "key" query parameter' }),
     };
   }
@@ -27,13 +38,20 @@ export const handler = async (event: any) => {
 
     return {
       statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        ...corsHeaders,
+      },
       body: JSON.stringify({ versions }),
     };
   } catch (error) {
     console.error(error);
     return {
       statusCode: 500,
+      headers: {
+        'Content-Type': 'application/json',
+        ...corsHeaders,
+      },
       body: JSON.stringify({ error: 'Internal server error' }),
     };
   }

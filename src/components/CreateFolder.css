@@ -1,0 +1,42 @@
+.create-folder {
+  margin: 1rem 0;
+}
+
+.btn-new-folder {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.btn-new-folder:hover {
+  background: #218838;
+}
+
+.folder-input-group {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.folder-input-group input {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.folder-input-group button {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.folder-input-group button:last-child {
+  background: #6c757d;
+}
